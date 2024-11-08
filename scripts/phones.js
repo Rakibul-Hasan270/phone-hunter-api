@@ -23,6 +23,7 @@ const displayPhones = phones => {
     phoneContainer.innerHTML = '';
     phones.forEach(phone => {
         // console.log(phone.length);
+        console.log(phone);
 
         const singlePhone = document.createElement('div');
         singlePhone.classList = `card bg-base-100 shadow-xl border m-4`;
@@ -35,7 +36,7 @@ const displayPhones = phones => {
                         <h2 class="card-title">${phone.phone_name}</h2>
                         <p>${phone.slug}</p>
                         <div class="card-actions">
-                            <button class="btn bg-[#0D6EFD]">Show Details</button>
+                            <button onclick="phnDetails"() class="btn bg-[#0D6EFD]">Show Details</button>
                         </div>
                     </div>
         `;
@@ -44,6 +45,11 @@ const displayPhones = phones => {
     spinner(false);
 }
 
+
+// phone details 
+const phnDetails = () => {
+    console.log(456)
+}
 
 // spinner or loader 
 const spinner = (isLoading) => {
@@ -64,5 +70,3 @@ const searchFun = () => {
 
     loadData(searchText);
 }
-
-// loadData()
