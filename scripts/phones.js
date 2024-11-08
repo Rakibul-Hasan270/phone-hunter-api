@@ -1,13 +1,28 @@
-const loadData = async () => {
-    const response = await fetch('https://openapi.programming-hero.com/api/phones?search=iphone');
+const loadData = async (searchText) => {
+    const response = await fetch(`https://openapi.programming-hero.com/api/phones?search=${searchText}`);
     const phones = await response.json();
     displayPhones(phones.data);
 }
 
 const displayPhones = phones => {
+    console.log(phones.length)
+
+
+    // showMore btn add or hidden 
+    const showMore = document.getElementById('show-more');
+    if (phones.length > 12) {
+        showMore.classList.remove('hidden');
+    } else {
+        showMore.classList.add('hidden');
+    }
+
+    // display phone only 12 
+    phones = phones.slice(0, 12);
+
     const phoneContainer = document.getElementById('phone-container');
+    phoneContainer.innerHTML = '';
     phones.forEach(phone => {
-        console.log(phone);
+        // console.log(phone.length);
 
         const singlePhone = document.createElement('div');
         singlePhone.classList = `card bg-base-100 shadow-xl border m-4`;
@@ -26,6 +41,28 @@ const displayPhones = phones => {
         `;
         phoneContainer.appendChild(singlePhone);
     });
+    spinner(false);
 }
 
-loadData()
+
+// spinner or loader 
+const spinner = (isLoading) => {
+    const loader = document.getElementById('spinner');
+    if (isLoading) {
+        loader.classList.remove('hidden');
+    }
+    else {
+        loader.classList.add('hidden');
+    }
+}
+
+const searchFun = () => {
+    spinner(true);
+
+    const searchField = document.getElementById('search-field');
+    const searchText = searchField.value;
+
+    loadData(searchText);
+}
+
+// loadData()

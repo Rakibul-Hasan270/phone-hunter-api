@@ -82,18 +82,21 @@
             <h3 class="text-5xl text-center font-bold">Search your phone</h3>
             <div class="md:w-3/5 p-8 mx-auto mt-8 mb-10">
                 <label class="input input-bordered flex items-center gap-2">
-                    <input type="text" class="grow" placeholder="Search Your Phone" />
-                    <span class="bg-[#0D6EFD] px-4 py-2 rounded-lg text-white cursor-pointer">Search</span>
+                    <input id="search-field" type="text" class="grow" placeholder="Search Your Phone" />
+                    <span onclick="searchFun()" class="bg-[#0D6EFD] px-4 py-2 rounded-lg text-white cursor-pointer">Search</span>
                 </label>
             </div>
         </section>
         <section class="container mx-auto">
             <div>
+                <div id="spinner" class="text-center hidden">
+                    <span class="loading loading-spinner text-info"></span>
+                </div>
                 <div id="phone-container" class="grid md:grid-cols-2 lg:grid-cols-3 rounded-3xl">
 
 
                 </div>
-                <div class="flex justify-center mt-4">
+                <div id="show-more" class="flex justify-center mt-4 hidden">
                     <button class="btn bg-[#0D6EFD]">Show More</button>
                 </div>
             </div>
