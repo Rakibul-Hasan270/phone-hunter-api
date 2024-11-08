@@ -7,11 +7,14 @@
     <title>Phone Hunter API</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
 </head>
 
-<body class="container mx-auto">
+<body>
     <header>
-        <nav>
+        <!-- navbar  -->
+        <nav class="container mx-auto">
             <div class="navbar bg-base-100">
                 <div class="flex-1">
                     <a class="btn btn-ghost text-3xl">Hot Gadgets</a>
@@ -62,9 +65,10 @@
             </div>
         </nav>
         <!-- banner section  -->
-        <section class="mt-20 mb-5">
+        <section class="container mx-auto mt-20 mb-5">
             <h3 class="text-5xl font-bold text-center">Apple Iphone 13 Pro Max</h3>
-            <p class="text-center mt-8 mb-8 text-2xl w-4/5 mx-auto">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humou.</p>
+            <p class="text-center mt-8 mb-8 text-2xl w-4/5 mx-auto">There are many variations of passages of Lorem Ipsum
+                available, but the majority have suffered alteration in some form, by injected humou.</p>
             <div class="flex justify-center">
                 <button class="btn btn-info text-2xl">Bye Now</button>
             </div>
@@ -74,11 +78,102 @@
         </section>
     </header>
     <main>
+        <section class="container mx-auto">
+            <h3 class="text-5xl text-center font-bold">Search your phone</h3>
+            <div class="md:w-3/5 p-8 mx-auto mt-8 mb-10">
+                <label class="input input-bordered flex items-center gap-2">
+                    <input type="text" class="grow" placeholder="Search Your Phone" />
+                    <span class="bg-[#0D6EFD] px-4 py-2 rounded-lg text-white cursor-pointer">Search</span>
+                </label>
+            </div>
+        </section>
+        <section class="container mx-auto">
+            <div>
+                <div id="phone-container" class="grid md:grid-cols-2 lg:grid-cols-3 rounded-3xl">
 
+
+                </div>
+                <div class="flex justify-center mt-4">
+                    <button class="btn bg-[#0D6EFD]">Show More</button>
+                </div>
+            </div>
+        </section>
     </main>
-    <footer>
+    <footer class="mt-8">
 
+        <footer class="bg-white dark:bg-gray-900">
+            <div class="container mx-auto w-full max-w-screen-xl">
+                <div class="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Company</h2>
+                        <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                            <li class="mb-4">
+                                <a href="#" class=" hover:underline">About</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="#" class="hover:underline">Careers</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="#" class="hover:underline">Brand Center</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="#" class="hover:underline">Blog</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Help center</h2>
+                        <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                            <li class="mb-4">
+                                <a href="#" class="hover:underline">Discord Server</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="#" class="hover:underline">Twitter</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="#" class="hover:underline">Facebook</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="#" class="hover:underline">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
+                        <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                            <li class="mb-4">
+                                <a href="#" class="hover:underline">Privacy Policy</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="#" class="hover:underline">Licensing</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Download</h2>
+                        <ul class="text-gray-500 dark:text-gray-400 font-medium">
+                            <li class="mb-4">
+                                <a href="#" class="hover:underline">iOS</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="#" class="hover:underline">Android</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="#" class="hover:underline">Windows</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="#" class="hover:underline">MacOS</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </footer>
+    <script src="./scripts/phones.js"></script>
 </body>
 
 </html>
