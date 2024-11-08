@@ -1,29 +1,32 @@
-const loadData = async (searchText) => {
+const loadData = async (searchText, isShowMore) => {
     const response = await fetch(`https://openapi.programming-hero.com/api/phones?search=${searchText}`);
     const phones = await response.json();
-    displayPhones(phones.data);
+    displayPhones(phones.data, isShowMore);
 }
 
-const displayPhones = phones => {
+const displayPhones = (phones, isShowMore) => {
     console.log(phones.length)
 
 
     // showMore btn add or hidden 
     const showMore = document.getElementById('show-more');
-    if (phones.length > 12) {
+    if (phones.length > 12 && !isShowMore) {
         showMore.classList.remove('hidden');
     } else {
         showMore.classList.add('hidden');
     }
 
+
     // display phone only 12 
-    phones = phones.slice(0, 12);
+    if (!isShowMore) {
+        phones = phones.slice(0, 12);
+    }
 
     const phoneContainer = document.getElementById('phone-container');
     phoneContainer.innerHTML = '';
     phones.forEach(phone => {
         // console.log(phone.length);
-        console.log(phone);
+        // console.log(phone);
 
         const singlePhone = document.createElement('div');
         singlePhone.classList = `card bg-base-100 shadow-xl border m-4`;
@@ -36,7 +39,7 @@ const displayPhones = phones => {
                         <h2 class="card-title">${phone.phone_name}</h2>
                         <p>${phone.slug}</p>
                         <div class="card-actions">
-                            <button onclick="phnDetails"() class="btn bg-[#0D6EFD]">Show Details</button>
+                            <button class="btn bg-[#0D6EFD]">Show Details</button>
                         </div>
                     </div>
         `;
@@ -45,11 +48,6 @@ const displayPhones = phones => {
     spinner(false);
 }
 
-
-// phone details 
-const phnDetails = () => {
-    console.log(456)
-}
 
 // spinner or loader 
 const spinner = (isLoading) => {
@@ -62,11 +60,17 @@ const spinner = (isLoading) => {
     }
 }
 
-const searchFun = () => {
+const searchFun = (isShowMore) => {
     spinner(true);
 
     const searchField = document.getElementById('search-field');
     const searchText = searchField.value;
 
-    loadData(searchText);
+    loadData(searchText, isShowMore);
+}
+
+
+// handel showMore
+const handelShowMore = () => {
+    searchFun(true);
 }
