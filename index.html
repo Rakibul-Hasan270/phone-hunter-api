@@ -83,7 +83,8 @@
             <div class="md:w-3/5 p-8 mx-auto mt-8 mb-10">
                 <label class="input input-bordered flex items-center gap-2">
                     <input id="search-field" type="text" class="grow" placeholder="Search Your Phone" />
-                    <span onclick="searchFun()" class="bg-[#0D6EFD] px-4 py-2 rounded-lg text-white cursor-pointer">Search</span>
+                    <span onclick="searchFun()"
+                        class="bg-[#0D6EFD] px-4 py-2 rounded-lg text-white cursor-pointer">Search</span>
                 </label>
             </div>
         </section>
@@ -96,50 +97,65 @@
 
                     <div class="card bg-base-100 shadow-xl border m-4">
                         <figure class="px-10 pt-10">
-                            <img src="https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13.jpg"
-                                alt="Phone" class="rounded-xl" />
+                            <img src="https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-13.jpg" alt="Phone"
+                                class="rounded-xl" />
                         </figure>
                         <div class="card-body items-center text-center">
                             <h2 class="card-title">iPhone13</h2>
                             <p>${phone.slug}</p>
                             <div class="card-actions">
-                                <button onclick="phnDetails"() class="btn bg-[#0D6EFD]">Show Details</button>
+                                <button class="btn bg-[#0D6EFD]">Show Details</button>
                             </div>
                         </div>
                     </div>
                     <div class="card bg-base-100 shadow-xl border m-4">
                         <figure class="px-10 pt-10">
-                            <img src="https://fdn2.gsmarena.com/vv/bigpic/oppo-a56-5g.jpg"
-                                alt="Phone" class="rounded-xl" />
+                            <img src="https://fdn2.gsmarena.com/vv/bigpic/oppo-a56-5g.jpg" alt="Phone"
+                                class="rounded-xl" />
                         </figure>
                         <div class="card-body items-center text-center">
                             <h2 class="card-title">${phone.phone_name}</h2>
                             <p>${phone.slug}</p>
                             <div class="card-actions">
-                                <button onclick="phnDetails"() class="btn bg-[#0D6EFD]">Show Details</button>
+                                <button onclick="phnDetails" () class="btn bg-[#0D6EFD]">Show Details</button>
                             </div>
                         </div>
                     </div>
                     <div class="card bg-base-100 shadow-xl border m-4">
                         <figure class="px-10 pt-10">
-                            <img src="https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-12.jpg"
-                                alt="Phone" class="rounded-xl" />
+                            <img src="https://fdn2.gsmarena.com/vv/bigpic/apple-iphone-12.jpg" alt="Phone"
+                                class="rounded-xl" />
                         </figure>
                         <div class="card-body items-center text-center">
                             <h2 class="card-title">iPhone11</h2>
                             <p>${phone.slug}</p>
                             <div class="card-actions">
-                                <button onclick="phnDetails"() class="btn bg-[#0D6EFD]">Show Details</button>
+                                <button onclick="phnDetails" () class="btn bg-[#0D6EFD]">Show Details</button>
                             </div>
                         </div>
                     </div>
+
+                    <!-- show details modal  -->
+                    <!-- Open the modal using ID.showModal() method -->
+                    <dialog id="show_details_modal" class="modal modal-bottom sm:modal-middle">
+                        <div class="modal-box">
+                            <h3 class="text-lg font-bold">Hello!</h3>
+                            <p class="py-4">Press ESC key or click the button below to close</p>
+                            <div class="modal-action">
+                                <form method="dialog">
+                                    <!-- if there is a button in form, it will close the modal -->
+                                    <button class="btn">Close</button>
+                                </form>
+                            </div>
+                        </div>
+                    </dialog>
 
                 </div>
                 <div onclick="handelShowMore()" id="show-more" class="flex justify-center mt-4 hidden">
                     <button class="btn bg-[#0D6EFD]">Show More</button>
                 </div>
             </div>
-        </section>
+        </section>  
     </main>
     <footer class="mt-8">
 

@@ -39,13 +39,20 @@ const displayPhones = (phones, isShowMore) => {
                         <h2 class="card-title">${phone.phone_name}</h2>
                         <p>${phone.slug}</p>
                         <div class="card-actions">
-                            <button class="btn bg-[#0D6EFD]">Show Details</button>
+                            <button onclick="handelShowDetails('${phone.slug}')" class="btn bg-[#0D6EFD]">Show Details</button>
                         </div>
                     </div>
         `;
         phoneContainer.appendChild(singlePhone);
     });
     spinner(false);
+}
+
+// handel show details 
+const handelShowDetails = async (id) => {
+    const res = await fetch(`https://openapi.programming-hero.com/api/phone/${id}`);
+    const data = await res.json();
+    console.log(data)
 }
 
 
